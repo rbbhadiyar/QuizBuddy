@@ -78,4 +78,4 @@ Open **http://localhost:5000** in your browser.
 
 ## 🎥 Demo
 
-https://github.com/user-attachments/assets/b81a3b4e-2b3e-4a4e-9e3e-Recording2026-05-20150015.mp4
+https://github.com/user-attachments/assets/0beb6749-f866-49b7-99b9-2f8a9db5dc4c
