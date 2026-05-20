@@ -1,3 +1,7 @@
+
+
+Uploading Recording 2026-05-20 150015 (1).mp4…
+
 # 🧠 QuizBuddy — AI Study Buddy
 
 QuizBuddy is an AI-powered study assistant that transforms your study material into interactive quizzes and flashcards instantly. Simply upload a PDF, Word document, or paste a URL — QuizBuddy extracts the content, detects key topics using prompt chaining, and generates MCQs or flashcards tailored to your chosen difficulty level. It's built to make revision faster, smarter, and more engaging.
