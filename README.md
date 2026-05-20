@@ -1,7 +1,3 @@
-
-
-Uploading Recording 2026-05-20 150015 (1).mp4…
-
 # 🧠 QuizBuddy — AI Study Buddy
 
 QuizBuddy is an AI-powered study assistant that transforms your study material into interactive quizzes and flashcards instantly. Simply upload a PDF, Word document, or paste a URL — QuizBuddy extracts the content, detects key topics using prompt chaining, and generates MCQs or flashcards tailored to your chosen difficulty level. It's built to make revision faster, smarter, and more engaging.
@@ -27,7 +23,7 @@ QuizBuddy/
 ├── quiz_generator.py   # Prompt chaining + output parsing
 ├── requirements.txt    # Python dependencies
 ├── .env                # API key (not pushed to GitHub)
-├── assets/             # Screenshots
+├── assets/             # Screenshots & demo
 ├── static/
 │   ├── style.css
 │   └── app.js
@@ -75,10 +71,11 @@ Open **http://localhost:5000** in your browser.
 - 📊 **Score tracking** after MCQ submission
 - ⬇️ **Export quiz** as JSON
 
-## 🖥️ Screenshots
+## 🖥️ Screenshot
 
 ### Input & Configuration
 ![Input Screen](assets/Screenshot%202026-05-20%20145637.png)
 
-### Quiz Results
-![Quiz Results](assets/Screenshot%202026-05-20%20145801.png)
+## 🎥 Demo
+
+https://github.com/user-attachments/assets/b81a3b4e-2b3e-4a4e-9e3e-Recording2026-05-20150015.mp4
