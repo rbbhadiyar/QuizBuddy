@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuizBuddy — AI Study Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header>
+      <div class="logo">🧠 QuizBuddy</div>
+      <p class="tagline">Upload study material. Get quizzes instantly.</p>
+    </header>
+
+    <!-- Step 1: Input -->
+    <section class="card" id="input-section">
+      <h2>1. Add Study Material</h2>
+
+      <div class="tab-group">
+        <button class="tab active" data-tab="file">📄 File Upload</button>
+        <button class="tab" data-tab="url">🔗 URL</button>
+      </div>
+
+      <div id="tab-file" class="tab-content active">
+        <div class="drop-zone" id="drop-zone">
+          <span id="drop-label">Drag & drop PDF or DOCX, or <label for="file-input" class="link">browse</label></span>
+          <input type="file" id="file-input" accept=".pdf,.docx" hidden />
+          <p id="file-name" class="file-name"></p>
+        </div>
+      </div>
+
+      <div id="tab-url" class="tab-content">
+        <input type="url" id="url-input" placeholder="https://example.com/article" />
+      </div>
+
+      <button class="btn primary" id="extract-btn">Extract Text →</button>
+      <div id="extract-status" class="status"></div>
+    </section>
+
+    <!-- Step 2: Configure -->
+    <section class="card hidden" id="config-section">
+      <h2>2. Configure Quiz</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Quiz Type</label>
+          <div class="btn-group">
+            <button class="opt-btn active" data-field="mode" data-val="mcq">MCQs</button>
+            <button class="opt-btn" data-field="mode" data-val="flashcard">Flashcards</button>
+            <button class="opt-btn" data-field="mode" data-val="both">Both</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Difficulty</label>
+          <div class="btn-group">
+            <button class="opt-btn active" data-field="difficulty" data-val="easy">Easy</button>
+            <button class="opt-btn" data-field="difficulty" data-val="medium">Medium</button>
+            <button class="opt-btn" data-field="difficulty" data-val="hard">Hard</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Topic Filter <span class="hint">(optional)</span></label>
+          <input type="text" id="topic-filter" placeholder="e.g. photosynthesis, World War II" />
+        </div>
+        <div class="form-group">
+          <label>Number of Questions</label>
+          <input type="number" id="count-input" value="5" min="1" max="20" />
+        </div>
+      </div>
+
+      <button class="btn primary" id="generate-btn">Generate Quiz ✨</button>
+      <div id="generate-status" class="status"></div>
+    </section>
+
+    <!-- Step 3: Results -->
+    <section class="card hidden" id="results-section">
+      <div class="results-header">
+        <h2>3. Your Quiz</h2>
+        <div>
+          <button class="btn secondary" id="restart-btn">↩ Start Over</button>
+          <button class="btn secondary" id="export-btn">⬇ Export JSON</button>
+        </div>
+      </div>
+
+      <div id="topics-box" class="topics-box hidden">
+        <strong>📌 Topics Detected:</strong>
+        <p id="topics-text"></p>
+      </div>
+
+      <!-- MCQ Tab -->
+      <div id="mcq-section">
+        <h3>Multiple Choice Questions</h3>
+        <div id="mcq-list"></div>
+        <div id="mcq-score" class="score-box hidden"></div>
+        <button class="btn primary" id="submit-mcq" style="margin-top:1rem">Submit Answers</button>
+      </div>
+
+      <!-- Flashcard Section -->
+      <div id="flashcard-section" class="hidden">
+        <h3>Flashcards</h3>
+        <div id="flashcard-nav">
+          <button class="btn secondary" id="fc-prev">‹ Prev</button>
+          <span id="fc-counter">1 / 1</span>
+          <button class="btn secondary" id="fc-next">Next ›</button>
+        </div>
+        <div id="flashcard-container">
+          <div class="flashcard" id="flashcard">
+            <div class="flashcard-inner">
+              <div class="flashcard-front" id="fc-front"></div>
+              <div class="flashcard-back" id="fc-back"></div>
+            </div>
+          </div>
+        </div>
+        <p class="hint" style="text-align:center">Click card to flip</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

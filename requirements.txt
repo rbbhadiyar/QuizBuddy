@@ -1,0 +1,8 @@
+flask
+flask-cors
+python-dotenv
+openai
+PyMuPDF
+python-docx
+requests
+beautifulsoup4
